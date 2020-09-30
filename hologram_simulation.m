@@ -52,9 +52,9 @@ for i = 1:length(obj.unique_z)
     else
         mask(:,:,i) = generate_circularmask([Ny, Nx], obj.sorted(id(i), 2:3), obj.sorted(id(i), 4));
     end
-    mask = double(imcomplement(mask));
 %     figure, imshow(mask(:,:,i))    
 end
+mask = 1-double(mask);
 
 %% Propogate plane wave
 M = mask(:, :, end);
